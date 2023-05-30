@@ -136,6 +136,9 @@ exclude_labels = [
     "T-*",
 ]
 
+[autolabel."bug"]
+new_pr = true
+
 [notify-zulip."I-prioritize"]
 zulip_stream = 245100 # #t-compiler/wg-prioritization/alerts
 topic = "#{number} {title}"
