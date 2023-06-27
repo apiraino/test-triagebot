@@ -14,7 +14,7 @@ allow-unauthenticated = [
 
 [assign]
 
-[review_prefs]
+[review-prefs]
 
 [glacier]
 
