@@ -15,6 +15,7 @@ allow-unauthenticated = [
 [assign]
 
 [review_work_queue]
+enabled = true
 
 [glacier]
 
