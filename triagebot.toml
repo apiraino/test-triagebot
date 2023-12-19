@@ -17,6 +17,8 @@ allow-unauthenticated = [
 # Enable this feature to keep track of the PR review assignment
 [review_work_queue]
 enabled = true
+something = []
+something_else = "a string"
 
 [glacier]
 
