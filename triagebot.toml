@@ -14,7 +14,8 @@ allow-unauthenticated = [
 
 [assign]
 
-[review-prefs]
+# Enable the feature to keep track of the PR review assignment
+[review_work_queue]
 
 [glacier]
 
