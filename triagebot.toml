@@ -19,7 +19,7 @@ allow-unauthenticated = [
 # A comma separated list of teams that are allowed to use the new PR review assignment workflow.
 # Team name matches names in the rust-lang/team repository:
 # https://github.com/rust-lang/team/tree/master/teams
-new_pr_assignment_teams=["compiler", "compiler-contributors"]
+enabled_for_teams=["compiler", "compiler-contributors"]
 
 [glacier]
 
