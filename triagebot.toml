@@ -15,11 +15,11 @@ allow-unauthenticated = [
 [assign]
 
 # Enable this feature to keep track of the PR review assignment
-[review-work-queue]
+#[review-work-queue]
 # A comma separated list of teams that are allowed to use the new PR review assignment workflow.
 # Team name matches names in the rust-lang/team repository:
 # https://github.com/rust-lang/team/tree/master/teams
-enabled-for-teams=["compiler", "compiler-contributors"]
+#enabled-for-teams=["compiler", "compiler-contributors"]
 
 [glacier]
 
