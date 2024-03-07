@@ -20,7 +20,7 @@ allow-unauthenticated = [
 # Team name matches names in the rust-lang/team repository:
 # https://github.com/rust-lang/team/tree/master/teams
 #enabled-for-teams=["compiler", "compiler-contributors"]
-[review-prefs]
+[pr-tracking]
 
 [glacier]
 
