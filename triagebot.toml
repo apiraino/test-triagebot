@@ -180,6 +180,33 @@ message_on_add = """\
 Issue #{number} "{title}" has been added.
 """
 
+[notify-zulip."beta-nominated"]
+required_labels = ["T-rustdoc"]
+zulip_stream = 266220
+topic = "beta-nominated: #{number}"
+message_on_add = "PR #{number}'s beta-nomination has been added."
+message_on_remove = "PR #{number}'s beta-nomination has been removed."
+message_on_close = "PR #{number} has been closed. Thanks for participating!"
+message_on_reopen = "PR #{number} has been reopened. Pinging @*T-rustdoc*."
+
+[notify-zulip."beta-nominated".compiler]
+required_labels = ["T-compiler"]
+zulip_stream = 474878
+topic = "beta-nominated: #{number}"
+message_on_add = "PR #{number}'s beta-nomination has been added."
+message_on_remove = "PR #{number}'s beta-nomination has been removed."
+message_on_close = "PR #{number} has been closed. Thanks for participating!"
+message_on_reopen = "PR #{number} has been reopened. Pinging @*T-compiler*."
+
+[notify-zulip."beta-nominated".miri]
+required_labels = ["T-miri"]
+zulip_stream = 266222
+topic = "beta-nominated: #{number}"
+message_on_add = "PR #{number}'s beta-nomination has been added."
+message_on_remove = "PR #{number}'s beta-nomination has been removed."
+message_on_close = "PR #{number} has been closed. Thanks for participating!"
+message_on_reopen = "PR #{number} has been reopened. Pinging @*T-miri*."
+
 [github-releases]
 format = "rustc"
 project-name = "Rust"
