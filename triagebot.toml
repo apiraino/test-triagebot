@@ -1393,7 +1393,7 @@ compiletest = [
 # Documentation at: https://forge.rust-lang.org/triagebot/transfer.html
 # [transfer]
 
-[[backport.teamBlue]]
+[[backport.teamBlueee]]
 #team_labels = ["T-compiler"]
 needs_labels = ["regression-from-stable-to-beta"]
 add_labels = ["beta-nominated"]
