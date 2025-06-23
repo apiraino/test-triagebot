@@ -2,7 +2,7 @@
 # https://forge.rust-lang.org/triagebot/pr-assignment.html#configuration
 
 
-[[backport.aaaaaa]]
+[[backport.bbb]]
 #team_labels = ["T-compiler"]
 needs_labels = ["regression-from-stable-to-beta"]
 add_labels = ["beta-nominated"]
