@@ -1,13 +1,21 @@
-# This file's format is documented at
+    # This file's format is documented at
 # https://forge.rust-lang.org/triagebot/pr-assignment.html#configuration
 
+[assign]
+warn_non_default_branch = true
+contributing_url = "https://rustc-dev-guide.rust-lang.org/getting-started.html"
 
-[[backport.aaa]]
-#team_labels = ["T-compiler"]
-needs_labels = ["regression-from-stable-to-beta"]
-add_labels = ["beta-nominated"]
+[backport.compilerBeta]
+required-pr-labels = ["T-compiler"]
+required-issue-label = "regression-from-stable-to-beta"
+add-labels= ["beta-nominated"]
 
-# [[backport.teamRed]]
-# team_labels = ["T-libs", "T-libs-api"]
-# needs_labels = ["regression-from-stable-to-stable"]
-# add_labels = ["beta-nominated","stable-nominated"]
+[backport.compilerStable]
+required-pr-labels = ["T-compiler"]
+required-issue-label = "regression-from-stable-to-stable"
+add-labels= ["beta-nominated", "stable-nominated"]
+
+[backport.teamRed]
+required-pr-labels = ["T-libs", "T-libs-api"]
+required-issue-label = "regression-from-stable-to-stable"
+add-labels= ["stable-nominated"]
