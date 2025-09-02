@@ -1,21 +1,31 @@
-    # This file's format is documented at
+# This file's format is documented at
 # https://forge.rust-lang.org/triagebot/pr-assignment.html#configuration
 
-[assign]
-warn_non_default_branch = true
-contributing_url = "https://rustc-dev-guide.rust-lang.org/getting-started.html"
+[relabel]
+allow-unauthenticated = [
+    "A-*",
+    "C-*",
+]
 
-[backport.compilerBeta]
-required-pr-labels = ["T-compiler"]
-required-issue-label = "regression-from-stable-to-beta"
-add-labels = ["beta-nominated"]
+[relabel.to-beta]
+add-labels = ["regression-from-stable-to-beta"]
+rem-labels = ["regression-from-stable-to-stable", "regression-from-stable-to-nightly"]
 
-#[backport.compilerStable]
-#required-pr-labels = ["T-compiler"]
-#required-issue-label = "regression-from-stable-to-stable"
-#add-labels = ["beta-nominated", "stable-nominated"]
-
-#[backport.teamRed]
-#required-pr-labels = ["T-libs", "T-libs-api"]
-#required-issue-label = "regression-from-stable-to-stable"
-#add-labels = ["stable-nominated"]
+[notify-zulip."beta-nominated".compiler]
+required_labels = ["T-compiler"]
+zulip_stream = 384059
+topic = "#{number}: beta-nomination"
+message_on_add = [
+    """\
+PR #{number} "{title}" fixes a regression.
+{recipients}, please evaluate nominating this PR for backport, thanks!
+The following poll is a vibe-check and not binding.
+""",
+    """\
+/poll Should #{number} be beta backported?
+approve
+decline
+don't know
+""",
+]
+message_on_remove = "PR #{number}'s beta-nomination has been removed."
