@@ -1,1 +1,3 @@
 All work and no play make Jack a dull boy
+
+One day all this will be yours.
