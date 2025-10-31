@@ -2,9 +2,9 @@
 # https://forge.rust-lang.org/triagebot/pr-assignment.html#configuration
 
 [notify-zulip."beta-nominated".compiler]
-required_labels = ["T-compiler"]
+required_labels = ["T-compiler", "beta-nominated", "!beta-accepted"]
 zulip_stream = 384059
-topic = "#{number}: beta-nomination"
+topic = "#{number}: beta-nominated"
 message_on_add = [
     """\
 PR #{number} "{title}" fixes a regression.
@@ -24,6 +24,14 @@ message_on_remove = "PR #{number}'s beta-nomination has been removed."
 [relabel]
 
 # relabel using aliases
-#[relabel.alias]
-#add-labels = []
-#rem-labels = []
+[relabel.alias]
+add-labels = []
+rem-labels = []
+
+[backport.t-compiler-beta-backport]
+# The pull request MUST have one of these labels
+required-pr-labels = ["T-compiler", "!beta-accepted"]
+# The regression MUST have this label
+required-issue-label = "regression-from-stable-to-beta"
+# if the above conditions matches, the PR will receive these labels
+add-labels = ["beta-nominated"]
