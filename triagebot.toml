@@ -3,7 +3,7 @@
 
 [notify-zulip."beta-nominated".compiler]
 required_labels = ["T-compiler", "beta-nominated", "!beta-accepted"]
-zulip_stream = 384059
+zulip_stream = 554919
 topic = "#{number}: beta-nominated"
 message_on_add = [
     """\
