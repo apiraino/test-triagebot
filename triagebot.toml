@@ -2,8 +2,12 @@
 # https://forge.rust-lang.org/triagebot/pr-assignment.html#configuration
 
 [notify-zulip."beta-nominated".compiler]
+# NOTE: negated labels will prevent this:
+# we have a beta-accepted PR
+# we add beta-nominated
+# zulip notification is triggered
 #required_labels = ["T-compiler", "beta-nominated", "!beta-accepted"]
-required_labels = ["T-compiler"]
+required_labels = ["T-compiler", "beta-nominated"]
 zulip_stream = 554919
 topic = "#{number}: beta-nominated"
 message_on_add = [
@@ -63,9 +67,12 @@ add-labels = []
 rem-labels = []
 
 [backport.t-compiler-beta-backport]
-# The pull request MUST have one of these labels
-required-pr-labels = ["T-compiler", "!beta-accepted"]
+# The pull request MUST have these labels
+#required-pr-labels = ["T-compiler", "!beta-accepted"]
+required-pr-labels = ["T-compiler"]
 # The regression MUST have this label
 required-issue-label = "regression-from-stable-to-beta"
 # if the above conditions matches, the PR will receive these labels
 add-labels = ["beta-nominated"]
+
+[lock]
